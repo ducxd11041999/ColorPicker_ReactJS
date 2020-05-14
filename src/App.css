@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.active{
+  bor: solid 3 px black;
+}
+#content{
+  padding-top: 10px;
+  border: solid 3px red;
+}
