@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 import './App.css';
+import ColorPicker from './components/ColorPicker'
+import Reset from './components/Reset'
+import Result from './components/Result'
+import SizeSetting from './components/SizeSetting'
 //import Product from'./components/Product'
 
 
@@ -8,40 +12,15 @@ class App extends Component {
         return(
         <div className="container mt-50">
             <div className="row">
+                <ColorPicker />
                 <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <div className="panel panel-primary">
-                        <div className="panel-heading">
-                            <h3 className="panel-title">Color Picker</h3>
-                        </div>
-                        <div className="panel-body">
-                            
-                        </div>
-                    </div>
-                </div>
-                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                <div className="panel panel-warning">
-                    <div className="panel-heading">
-                        <h3 className="panel-title">Size: 15px</h3>
-                    </div>
-                    <div className="panel-body">
-                        <button type="button" className="btn btn-success">Tăng</button>
-                        <button type="button" className="btn btn-success">Giảm</button>
-                    </div>
-                </div>
-                <button type="button" className="btn btn-primary">reset</button>
+                <SizeSetting />
+                <Reset />
             </div>
-            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <p>
-                    Color : red - FrontSize : 15px
-                </p>
-                <div id="content">
-                    Nội dung setting
-                </div>
-            </div>
+            <Result />
             </div>
         </div>
         );
     }
 }
-
 export default App;
