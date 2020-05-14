@@ -1,10 +1,37 @@
 import React, {Component} from 'react';
-
 //import Product from'./components/Product'
 
-
 class ColorPicker extends Component {
+    constructor(props)
+    {
+        super(props)
+        this.state = {
+            colors : ['red', 'green', 'blue', 'yellow']
+        };
+    }
+    showColor(color) 
+    {
+        //console.log(this.props.color)
+        return(
+                {backgroundColor : color}
+            );
+    }
+
+    setActiveColor(color)
+    {
+        this.props.onReceiveColor(color)
+    }
     render(){
+        var eleColor = this.state.colors.map((color, index) =>{
+            return (
+                <span key={index} 
+                        style={this.showColor(color)}
+                        className={this.props.color === color?"Active":"  "}
+                        onClick = {()=>this.setActiveColor(color)}
+                        >
+                </span>
+                );
+        });
         return(
                 <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <div className="panel panel-primary">
@@ -12,7 +39,8 @@ class ColorPicker extends Component {
                             <h3 className="panel-title">Color Picker</h3>
                         </div>
                         <div className="panel-body">
-                            <span></span>
+                            {eleColor}
+                            <hr/>
                         </div>
                     </div>
                 </div>

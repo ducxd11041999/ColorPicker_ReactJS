@@ -37,9 +37,10 @@
   }
 }
 
-.active{
-  bor: solid 3 px black;
+.Active {
+  border: solid 3px black;
 }
+
 #content{
   padding: 10px;
   border: solid 3px red;

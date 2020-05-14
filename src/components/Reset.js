@@ -3,9 +3,14 @@ import React, {Component} from 'react';
 
 
 class Reset extends Component {
+
+	Reset =()=>
+	{
+		this.props.onReceiveReset();
+	}
     render(){
         return(
-            <button type="button" className="btn btn-success">reset</button>
+            <button type="button" className="btn btn-success" onClick ={()=> {this.Reset()}}>reset</button>
         );
     }
 }
